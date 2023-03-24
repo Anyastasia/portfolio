@@ -1,0 +1,159 @@
+:root {
+    --primary-bg-dark: #1b1b1b;
+    --primary-font-color-dark: white;
+    --primary-bg-light: #f0f2f5;
+    --primary-font-color-light: #111;
+    --primary: hsl(271, 76%, 53%);
+    --primary-dark:  hsla(271, 76%, 53%, 0.2);
+    --corner-radius: 20px;
+}
+
+*, *::before, *::after {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body {
+    /* background-color: var(--primary-bg-dark);
+    color: var(--primary-font-color-dark); */
+}
+
+.dark-mode {
+    background-color: var(--primary-bg-dark);
+    color: var(--primary-font-color-dark);
+}
+
+.light-mode {
+    background-color: var(--primary-bg-light);
+    color: var(--primary-font-color-light);
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+nav {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: var(--primary-font-color);
+    padding: .5rem 1rem;
+}
+nav ul li a:hover {
+    border-bottom: solid 1px white;
+}
+
+.m-block-1 {
+    margin-block: 1rem;
+}
+
+.m-block-end-1 {
+    margin-block-end: 1rem;
+}
+
+.m-block-end-3 {
+    margin-block-end: 3rem;
+}
+
+.m-inline-end-3 {
+    margin-inline-end: 3rem;
+}
+.button {
+    padding: 1rem;
+    background-color: var(--primary-dark);
+    color: var(--primary);
+    border-radius: var(--corner-radius);
+}
+.grid {
+    display: grid;
+}
+
+.link-icon {
+    color: var(--primary-font-color);
+    font-size: clamp(1.5rem, 12vw + 1rem, 2.5rem);
+}
+
+
+.link-icon:hover {
+    color: var(--primary);
+}
+
+.root {
+    grid-template-areas: 
+    "nav nav"
+    "body body"
+    "footer footer";
+}
+
+.projects {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.projects img {
+    max-width: 95%;
+}
+
+.projects article {
+}
+.name {
+    font-size: clamp(3.5rem, 12vw + 2rem, 4.5rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 12vw + 2rem, 3rem);
+}
+
+#nav {
+    grid-area: nav;
+}
+
+#main {
+    grid-area: body;
+    padding-inline: 2.5rem;
+    container: main / inline-size;
+}
+
+#main > section {
+    height: 95vh;
+}
+
+/* #home {
+    height: 90vh;
+} */
+
+
+#footer {
+    grid-area: footer;
+}
+
+@container (width > 1rem) and (width < 40rem) {
+    #main {
+        padding-inline: 1rem;
+    }
+
+    .name{
+        font-size: clamp(2rem, 12cqi + 1rem, 3rem);
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 12cqi + 1rem, 2rem);
+    }
+
+}
+
+@container (width > 1rem) and (width < 60rem) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
+}
